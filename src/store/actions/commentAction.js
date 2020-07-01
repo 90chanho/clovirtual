@@ -1,0 +1,5 @@
+export const GET_COMMENTS = "GET_COMMENTS"
+export const ADD_COMMENT = "ADD_COMMENT"
+export const REMOVE_COMMENT = "REMOVE_COMMENT"
+export const LIKE_COMMENT = "LIKE_COMMENT"
+export const RE_COMMENT = "RE_COMMENT"
