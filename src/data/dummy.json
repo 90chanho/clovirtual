@@ -1,0 +1,46 @@
+{
+	"users": [
+		{
+			"uid": "0e0e-2aa6-d523-3521",
+			"name": "유저1"
+		},
+		{
+			"uid": "fb6b-60bf-ffc2-da85",
+			"name": "유저2"
+		},
+		{
+			"uid": "04f5-883c-5dbc-b2e8",
+			"name": "유저3"
+		}
+	],
+	"articles": [
+		{
+			"author": "0e0e-2aa6-d523-3521",
+			"createDate": "",
+			"content": "",
+			"likes": [],
+			"comments": []
+		},
+		{
+			"author": "fb6b-60bf-ffc2-da85",
+			"createDate": "",
+			"content": "",
+			"likes": [],
+			"comments": []
+		},
+		{
+			"author": "04f5-883c-5dbc-b2e8",
+			"createDate": "",
+			"content": "",
+			"likes": [],
+			"comments": []
+		},
+		{
+			"author": "0e0e-2aa6-d523-3521",
+			"createDate": "",
+			"content": "",
+			"likes": [],
+			"comments": []
+		}
+	]
+}
