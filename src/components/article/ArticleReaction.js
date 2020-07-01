@@ -2,8 +2,27 @@ import React, { Component } from "react"
 import styled from "styled-components"
 
 const StyledWrapper = styled.div`
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
+	border-top: 1px solid #cdd0d4;
+	border-bottom: 1px solid #cdd0d4;
+	display: flex;
+	justify-content: space-around;
+	padding: 5px;
+
+	button {
+		width: 30%;
+		padding: 10px;
+		box-sizing: border-box;
+		border-radius: 8px;
+
+		&:hover {
+			background-color: #eee;
+		}
+
+		i {
+			margin-right: 5px;
+			vertical-align: middle;
+		}
+	}
 `
 
 export default class ArticleReaction extends Component {
@@ -11,7 +30,7 @@ export default class ArticleReaction extends Component {
 		return (
 			<StyledWrapper>
 				<button>
-					<i className="fas fa-thumbs-up" />
+					<i className="far fa-thumbs-up" />
 					좋아요
 				</button>
 				<button>

@@ -8,13 +8,13 @@ import ArticleReaction from "components/article/ArticleReaction"
 import ArticleComment from "components/article/ArticleComment"
 
 const StyledWrapper = styled.article`
-	min-width: 80%;
-	max-width: 500px;
-	display: inline-block;
+	margin: 0 auto;
+	width: 500px;
 	background-color: #fff;
-	border: 1px solid gray;
-	border-radius: 12px;
+	border-radius: 8px;
 	padding: 15px;
+	margin-top: 16px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 `
 
 export default class Article extends Component {

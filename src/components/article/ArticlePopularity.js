@@ -2,8 +2,13 @@ import React, { Component } from "react"
 import styled from "styled-components"
 
 const StyledWrapper = styled.div`
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	.fa-thumbs-up {
+		color: #0f98f5;
+	}
 `
 
 export default class ArticlePopularity extends Component {

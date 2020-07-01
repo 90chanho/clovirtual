@@ -1,14 +1,13 @@
 import React, { Component } from "react"
 import Comment from "components/comment/Comment"
-import CommentForm from "components/comment/CommentForm"
+import CommentAddForm from "components/comment/CommentAddForm"
 
 export default class ArticleComment extends Component {
 	render() {
 		return (
 			<div>
-				<CommentForm />
+				<CommentAddForm />
 				<ul>
-					{/* 리스트 렌더링 */}
 					<Comment />
 				</ul>
 			</div>

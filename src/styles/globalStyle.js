@@ -4,12 +4,12 @@ import { Reset } from "styled-reset"
 export const GlobalStyle = createGlobalStyle`
   ${Reset};
   body {
-    min-width: 320px;
     margin: 0;
     font-family: "San Francisco", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
       "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.33;
 
     h1,
     h2,
@@ -27,5 +27,13 @@ export const GlobalStyle = createGlobalStyle`
 
   .App {
     text-align: center;
+  }
+
+  button {
+    background: none;
+    border: none;
+  }
+  button, .clickable {
+    cursor: pointer;
   }
 `

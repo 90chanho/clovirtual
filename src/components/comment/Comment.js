@@ -1,25 +1,39 @@
 import React, { Component } from "react"
+import styled from "styled-components"
 
 import Profile from "components/Profile"
-import CommentForm from "components/comment/CommentForm"
+import CommentAddForm from "components/comment/CommentAddForm"
 import CommentContent from "components/comment/CommentContent"
+
+const StyledWrapper = styled.li`
+	.commentContent,
+	.reCommentItem {
+		display: flex;
+		margin-top: 10px;
+	}
+	.reCommentList {
+		padding-left: 45px;
+	}
+`
 
 export default class Comment extends Component {
 	render() {
 		return (
-			<li>
-				<div>
-					<Profile />
+			<StyledWrapper>
+				<div className="commentContent">
+					<Profile type="small" />
 					<CommentContent />
 				</div>
-				<ul className="recomment">
-					<li>
-						<Profile />
+				<ul className="reCommentList">
+					<li className="reCommentItem">
+						<Profile type="small" />
 						<CommentContent />
 					</li>
+					<li>
+						<CommentAddForm />
+					</li>
 				</ul>
-				<CommentForm />
-			</li>
+			</StyledWrapper>
 		)
 	}
 }

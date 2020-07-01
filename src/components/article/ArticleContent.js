@@ -1,7 +1,11 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-const StyledWrapper = styled.section``
+const StyledWrapper = styled.section`
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+`
 
 export default class ArticleContent extends Component {
 	render() {

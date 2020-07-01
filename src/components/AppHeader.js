@@ -4,12 +4,17 @@ import { ReactComponent as logo } from "assets/logo.svg"
 
 const Logo = styled(logo)``
 const StyledWrapper = styled.header`
+	background-color: #323236;
 	padding: 1rem 0;
-	box-shadow: 0 4px 10px 0px gray;
 	a {
 		display: inline-block;
 		width: 98px;
 		overflow: hidden;
+
+		svg {
+			position: relative;
+			right: 100%;
+		}
 	}
 `
 
