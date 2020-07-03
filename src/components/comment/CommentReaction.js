@@ -2,7 +2,12 @@ import React, { Component } from "react"
 import styled from "styled-components"
 
 import store from "store"
-import { LIKE_ARTICLE_COMMENT, CANCEL_LIKE_ARTICLE_COMMENT } from "store/actions/articleAction"
+import {
+	LIKE_ARTICLE_COMMENT,
+	CANCEL_LIKE_ARTICLE_COMMENT,
+	LIKE_RE_COMMENT,
+	CANCEL_LIKE_RE_COMMENT
+} from "store/actions/articleAction"
 
 const StyledWrapper = styled.div`
 	margin-top: 3px;
@@ -55,9 +60,35 @@ export default class CommentReaction extends Component {
 		}
 	}
 
+	handleLikeReComment = () => {
+		const { aid, cid, ccid, authorUid } = this.props.commentData
+		const isAlreadyLiked = this.onCheckLikedCurrentUser()
+		if (isAlreadyLiked) {
+			store.dispatch({
+				type: CANCEL_LIKE_RE_COMMENT,
+				payload: {
+					aid,
+					cid,
+					ccid,
+					authorUid
+				}
+			})
+		} else {
+			store.dispatch({
+				type: LIKE_RE_COMMENT,
+				payload: {
+					aid,
+					cid,
+					ccid,
+					authorUid
+				}
+			})
+		}
+	}
+
 	onCheckLikedCurrentUser = () => {
-		const { likes } = this.props.commentData
 		const { uid } = store.getState().authReducer.auth
+		const { likes } = this.props.commentData
 
 		let alreadyChecked = false
 		likes.forEach(like => {
@@ -71,7 +102,7 @@ export default class CommentReaction extends Component {
 		return (
 			<StyledWrapper>
 				<button
-					onClick={this.handleLikeComment}
+					onClick={commentType === "comment" ? this.handleLikeComment : this.handleLikeReComment}
 					className={`buttonLike ${this.onCheckLikedCurrentUser() ? "liked" : "unliked"}`}>
 					좋아요
 				</button>

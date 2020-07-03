@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import AppHeader from "components/AppHeader"
 import AppMain from "components/AppMain"
+import { onHideAllFloatLayer } from "lib/util"
 
 const StyledWrapper = styled.div`
 	display: flex;
@@ -15,10 +16,7 @@ class App extends Component {
 			!e.target.classList.contains("floatLayer") &&
 			!e.target.classList.contains("toggleFloatLayerButton")
 		) {
-			const floatLayers = document.querySelectorAll(".floatLayer")
-			for (let i = 0; i < floatLayers.length; i++) {
-				floatLayers[i].classList.remove("is-show")
-			}
+			onHideAllFloatLayer()
 		}
 	}
 

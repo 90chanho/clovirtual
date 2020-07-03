@@ -6,7 +6,8 @@ import {
 	CANCEL_LIKE_ARTICLE_COMMENT,
 	ADD_RE_COMMENT,
 	REMOVE_RE_COMMENT,
-	LIKE_RE_COMMENT
+	LIKE_RE_COMMENT,
+	CANCEL_LIKE_RE_COMMENT
 } from "../actions/articleAction"
 import { articles } from "data/dummy.json"
 
@@ -114,9 +115,52 @@ const articleReducer = (state = initValue, { type, payload }) => {
 			}
 			setItemArticlesLocalStorage(updatedArticles)
 			return changedState
-		case REMOVE_RE_COMMENT:
-			return state
 		case LIKE_RE_COMMENT:
+			updatedArticles = state.articles.map(article => {
+				if (article.aid === payload.aid) {
+					article.comments.forEach(comment => {
+						if (comment.cid === payload.cid) {
+							comment.comments.forEach(recomment => {
+								if (recomment.ccid === payload.ccid) {
+									recomment.likes.push(payload.authorUid)
+								}
+							})
+						}
+					})
+				}
+				return article
+			})
+			changedState = {
+				...state,
+				articles: updatedArticles
+			}
+			setItemArticlesLocalStorage(updatedArticles)
+			return changedState
+		case CANCEL_LIKE_RE_COMMENT:
+			updatedArticles = state.articles.map(article => {
+				if (article.aid === payload.aid) {
+					article.comments.forEach(comment => {
+						if (comment.cid === payload.cid) {
+							comment.comments.forEach(recomment => {
+								if (recomment.ccid === payload.ccid) {
+									const targetIndex = recomment.likes.findIndex(liker => {
+										return liker === payload.authorUid
+									})
+									recomment.likes.splice(targetIndex, 1)
+								}
+							})
+						}
+					})
+				}
+				return article
+			})
+			changedState = {
+				...state,
+				articles: updatedArticles
+			}
+			setItemArticlesLocalStorage(updatedArticles)
+			return changedState
+		case REMOVE_RE_COMMENT:
 			return state
 		default:
 			return state

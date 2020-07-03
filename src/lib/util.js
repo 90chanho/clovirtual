@@ -5,3 +5,10 @@ const makeUniqueId = () => {
 export const setUid = () => {
 	return `${makeUniqueId()}-${makeUniqueId()}-${makeUniqueId()}-${makeUniqueId()}-${makeUniqueId()}`
 }
+
+export const onHideAllFloatLayer = e => {
+	const floatLayers = document.querySelectorAll(".floatLayer")
+	for (let i = 0; i < floatLayers.length; i++) {
+		floatLayers[i].classList.remove("is-show")
+	}
+}

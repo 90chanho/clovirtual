@@ -5,6 +5,7 @@ import store from "store"
 import { REMOVE_ARTICLE_COMMENT } from "store/actions/articleAction"
 import CommentReaction from "components/comment/CommentReaction"
 import Modal from "components/modal/Modal"
+import { onHideAllFloatLayer } from "lib/util"
 
 const StyledWrapper = styled.div`
 	position: relative;
@@ -136,9 +137,12 @@ export default class CommentContent extends Component {
 
 	onToggleFloatLayer = e => {
 		e.stopPropagation()
-		this.floatLayer.current.classList.contains("is-show")
-			? this.floatLayer.current.classList.remove("is-show")
-			: this.floatLayer.current.classList.add("is-show")
+		if (this.floatLayer.current.classList.contains("is-show")) {
+			this.floatLayer.current.classList.remove("is-show")
+		} else {
+			onHideAllFloatLayer()
+			this.floatLayer.current.classList.add("is-show")
+		}
 	}
 
 	render() {
