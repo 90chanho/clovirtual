@@ -25,6 +25,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
+	"homepage": "https://90chanho.github.io/clovirtual",
 	"eslintConfig": {
 		"extends": "react-app"
 	},

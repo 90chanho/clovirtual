@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/static/js/main.abdb3086.chunk.js",
-    "main.js.map": "/static/js/main.abdb3086.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.72f738b3.js",
-    "runtime-main.js.map": "/static/js/runtime-main.72f738b3.js.map",
-    "static/js/2.f6ddb0a6.chunk.js": "/static/js/2.f6ddb0a6.chunk.js",
-    "static/js/2.f6ddb0a6.chunk.js.map": "/static/js/2.f6ddb0a6.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.1992df402e3e5b6a1448e5f7c526ad6e.js": "/precache-manifest.1992df402e3e5b6a1448e5f7c526ad6e.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.f6ddb0a6.chunk.js.LICENSE.txt": "/static/js/2.f6ddb0a6.chunk.js.LICENSE.txt",
-    "static/media/logo.c4da8991.svg": "/static/media/logo.c4da8991.svg"
+    "main.js": "/clovirtual/static/js/main.abdb3086.chunk.js",
+    "main.js.map": "/clovirtual/static/js/main.abdb3086.chunk.js.map",
+    "runtime-main.js": "/clovirtual/static/js/runtime-main.828376cd.js",
+    "runtime-main.js.map": "/clovirtual/static/js/runtime-main.828376cd.js.map",
+    "static/js/2.50488572.chunk.js": "/clovirtual/static/js/2.50488572.chunk.js",
+    "static/js/2.50488572.chunk.js.map": "/clovirtual/static/js/2.50488572.chunk.js.map",
+    "index.html": "/clovirtual/index.html",
+    "precache-manifest.f73414bf7b0efa709a7ac822dab99385.js": "/clovirtual/precache-manifest.f73414bf7b0efa709a7ac822dab99385.js",
+    "service-worker.js": "/clovirtual/service-worker.js",
+    "static/js/2.50488572.chunk.js.LICENSE.txt": "/clovirtual/static/js/2.50488572.chunk.js.LICENSE.txt",
+    "static/media/logo.c4da8991.svg": "/clovirtual/static/media/logo.c4da8991.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.72f738b3.js",
-    "static/js/2.f6ddb0a6.chunk.js",
+    "static/js/runtime-main.828376cd.js",
+    "static/js/2.50488572.chunk.js",
     "static/js/main.abdb3086.chunk.js"
   ]
 }
