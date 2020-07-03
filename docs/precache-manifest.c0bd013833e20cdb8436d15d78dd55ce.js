@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8b7862b2fa2cf0c6f9abba22e8ab2a56",
+    "revision": "f3a8f408b9bb7a658930f8597a58182b",
     "url": "/clovirtual/index.html"
   },
   {
-    "revision": "04de346d50c56b0386b2",
-    "url": "/clovirtual/static/js/2.50488572.chunk.js"
+    "revision": "4e9f61429affe30918e3",
+    "url": "/clovirtual/static/js/2.7b499030.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/clovirtual/static/js/2.50488572.chunk.js.LICENSE.txt"
+    "url": "/clovirtual/static/js/2.7b499030.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "30b50426f971dfab4fc4",
-    "url": "/clovirtual/static/js/main.abdb3086.chunk.js"
+    "revision": "54c2d36c4c59ba1ef65d",
+    "url": "/clovirtual/static/js/main.b24f245a.chunk.js"
   },
   {
     "revision": "d8e49fdc843197ebb5cc",

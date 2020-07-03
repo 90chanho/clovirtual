@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/clovirtual/static/js/main.abdb3086.chunk.js",
-    "main.js.map": "/clovirtual/static/js/main.abdb3086.chunk.js.map",
+    "main.js": "/clovirtual/static/js/main.b24f245a.chunk.js",
+    "main.js.map": "/clovirtual/static/js/main.b24f245a.chunk.js.map",
     "runtime-main.js": "/clovirtual/static/js/runtime-main.828376cd.js",
     "runtime-main.js.map": "/clovirtual/static/js/runtime-main.828376cd.js.map",
-    "static/js/2.50488572.chunk.js": "/clovirtual/static/js/2.50488572.chunk.js",
-    "static/js/2.50488572.chunk.js.map": "/clovirtual/static/js/2.50488572.chunk.js.map",
+    "static/js/2.7b499030.chunk.js": "/clovirtual/static/js/2.7b499030.chunk.js",
+    "static/js/2.7b499030.chunk.js.map": "/clovirtual/static/js/2.7b499030.chunk.js.map",
     "index.html": "/clovirtual/index.html",
-    "precache-manifest.f73414bf7b0efa709a7ac822dab99385.js": "/clovirtual/precache-manifest.f73414bf7b0efa709a7ac822dab99385.js",
+    "precache-manifest.c0bd013833e20cdb8436d15d78dd55ce.js": "/clovirtual/precache-manifest.c0bd013833e20cdb8436d15d78dd55ce.js",
     "service-worker.js": "/clovirtual/service-worker.js",
-    "static/js/2.50488572.chunk.js.LICENSE.txt": "/clovirtual/static/js/2.50488572.chunk.js.LICENSE.txt",
+    "static/js/2.7b499030.chunk.js.LICENSE.txt": "/clovirtual/static/js/2.7b499030.chunk.js.LICENSE.txt",
     "static/media/logo.c4da8991.svg": "/clovirtual/static/media/logo.c4da8991.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.828376cd.js",
-    "static/js/2.50488572.chunk.js",
-    "static/js/main.abdb3086.chunk.js"
+    "static/js/2.7b499030.chunk.js",
+    "static/js/main.b24f245a.chunk.js"
   ]
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/clovirtual/precache-manifest.f73414bf7b0efa709a7ac822dab99385.js"
+  "/clovirtual/precache-manifest.c0bd013833e20cdb8436d15d78dd55ce.js"
 );
 
 self.addEventListener('message', (event) => {
