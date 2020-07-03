@@ -158,12 +158,14 @@ export default class CommentContent extends Component {
 						<i className="fas fa-thumbs-up" />
 						<span>{commentData.likes.length}</span>
 					</div>
-					<div className="commentHandle">
-						<i
-							className="fas fa-ellipsis-h clickable toggleFloatLayerButton"
-							onClick={this.onToggleFloatLayer}
-						/>
-					</div>
+					{commentType === "comment" && (
+						<div className="commentHandle">
+							<i
+								className="fas fa-ellipsis-h clickable toggleFloatLayerButton"
+								onClick={this.onToggleFloatLayer}
+							/>
+						</div>
+					)}
 					<div className="handlebuttonWrapper floatLayer" ref={this.floatLayer}>
 						<button onClick={this.onShowCommentDeleteModal}>삭제하기</button>
 					</div>

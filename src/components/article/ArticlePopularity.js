@@ -21,7 +21,7 @@ export default class ArticlePopularity extends Component {
 		return (
 			<StyledWrapper>
 				<div>
-					<i className="fas fa-thumbs-up"></i> 좋아요 숫자
+					<i className="fas fa-thumbs-up"></i> 좋아요
 				</div>
 				<div hidden={!articleData.comments.length}>
 					댓글 {articleData.comments ? articleData.comments.length : 0} 개
