@@ -43,7 +43,7 @@ export default class CommentAddForm extends Component {
 			const payload = {
 				aid: this.props.aid,
 				content: this.state.commentContent,
-				createData: moment(),
+				createDate: moment().format("YYYY-MM-DD HH:mm"),
 				authorUid: store.getState().authReducer.auth.uid,
 				likes: [],
 				comments: []

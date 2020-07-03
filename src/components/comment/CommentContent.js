@@ -62,6 +62,13 @@ const StyledWrapper = styled.div`
 		left: 100%;
 		transform: translateY(-50%);
 
+		&:hover,
+		&:focus {
+			i {
+				background-color: #f1f2f5;
+			}
+		}
+
 		i {
 			width: 30px;
 			height: 30px;
@@ -70,9 +77,6 @@ const StyledWrapper = styled.div`
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
-			&:hover {
-				background-color: #f1f2f5;
-			}
 		}
 	}
 
@@ -92,7 +96,8 @@ const StyledWrapper = styled.div`
 			width: 100%;
 			border-radius: 4px;
 			padding: 5px;
-			&:hover {
+			&:hover,
+			&:focus {
 				background-color: #f1f2f5;
 			}
 		}
@@ -145,6 +150,10 @@ export default class CommentContent extends Component {
 		}
 	}
 
+	handleKeydown = e => {
+		e.keyCode === 13 && this.onToggleFloatLayer(e)
+	}
+
 	render() {
 		const { commentData, userData, showReCommentForm, commentType } = this.props
 		return (
@@ -159,11 +168,12 @@ export default class CommentContent extends Component {
 						<span>{commentData.likes.length}</span>
 					</div>
 					{commentType === "comment" && (
-						<div className="commentHandle">
-							<i
-								className="fas fa-ellipsis-h clickable toggleFloatLayerButton"
-								onClick={this.onToggleFloatLayer}
-							/>
+						<div
+							className="commentHandle"
+							tabIndex="0"
+							onClick={this.onToggleFloatLayer}
+							onKeyDown={this.handleKeydown}>
+							<i className="fas fa-ellipsis-h clickable toggleFloatLayerButton" />
 						</div>
 					)}
 					<div className="handlebuttonWrapper floatLayer" ref={this.floatLayer}>
@@ -171,7 +181,10 @@ export default class CommentContent extends Component {
 					</div>
 				</div>
 				{this.state.isShowCommentDeleteModal && (
-					<Modal title="댓글을 삭제하시겠습니까?" desc="해당 댓글의 답글들도 전부 삭제됩니다.">
+					<Modal
+						title="댓글을 삭제하시겠습니까?"
+						desc="해당 댓글의 답글들도 전부 삭제됩니다."
+						onClose={this.onHideCommentDeleteModal}>
 						<button className="cancel" onClick={this.onHideCommentDeleteModal}>
 							취소
 						</button>

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import moment from "moment"
 
 import store from "store"
 import {
@@ -98,7 +99,7 @@ export default class CommentReaction extends Component {
 	}
 
 	render() {
-		const { showReCommentForm, commentType } = this.props
+		const { showReCommentForm, commentType, commentData } = this.props
 		return (
 			<StyledWrapper>
 				<button
@@ -112,7 +113,7 @@ export default class CommentReaction extends Component {
 					onClick={showReCommentForm}>
 					답글 달기
 				</button>
-				<span className="createDate">댓글 작성 날짜</span>
+				<span className="createDate">{moment(commentData.createDate).fromNow()}</span>
 			</StyledWrapper>
 		)
 	}
