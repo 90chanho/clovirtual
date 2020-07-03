@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.33;
 
+    &.overflowHidden {
+      overflow: hidden;
+    }
+
     h1,
     h2,
     h3,

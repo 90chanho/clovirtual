@@ -2,8 +2,9 @@ import React, { Component, createRef } from "react"
 import styled from "styled-components"
 
 import store from "store"
-import CommentReaction from "components/comment/CommentReaction"
 import { REMOVE_ARTICLE_COMMENT } from "store/actions/articleAction"
+import CommentReaction from "components/comment/CommentReaction"
+import Modal from "components/modal/Modal"
 
 const StyledWrapper = styled.div`
 	position: relative;
@@ -108,6 +109,10 @@ export default class CommentContent extends Component {
 		this.floatLayer = createRef()
 	}
 
+	state = {
+		isShowCommentDeleteModal: false
+	}
+
 	onDeleteComment = () => {
 		const { aid, cid } = this.props.commentData
 		const payload = {
@@ -115,6 +120,18 @@ export default class CommentContent extends Component {
 			cid
 		}
 		store.dispatch({ type: REMOVE_ARTICLE_COMMENT, payload })
+	}
+
+	onShowCommentDeleteModal = () => {
+		this.setState({
+			isShowCommentDeleteModal: true
+		})
+	}
+
+	onHideCommentDeleteModal = () => {
+		this.setState({
+			isShowCommentDeleteModal: false
+		})
 	}
 
 	onToggleFloatLayer = e => {
@@ -144,9 +161,19 @@ export default class CommentContent extends Component {
 						/>
 					</div>
 					<div className="handlebuttonWrapper floatLayer" ref={this.floatLayer}>
-						<button onClick={this.onDeleteComment}>삭제하기</button>
+						<button onClick={this.onShowCommentDeleteModal}>삭제하기</button>
 					</div>
 				</div>
+				{this.state.isShowCommentDeleteModal && (
+					<Modal title="댓글을 삭제하시겠습니까?" desc="해당 댓글의 답글들도 전부 삭제됩니다.">
+						<button className="cancel" onClick={this.onHideCommentDeleteModal}>
+							취소
+						</button>
+						<button className="action" onClick={this.onDeleteComment}>
+							확인
+						</button>
+					</Modal>
+				)}
 				<CommentReaction
 					commentType={commentType}
 					commentData={commentData}
