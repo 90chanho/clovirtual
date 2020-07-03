@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import AppHeader from "components/AppHeader"
 import AppMain from "components/AppMain"
@@ -9,13 +9,34 @@ const StyledWrapper = styled.div`
 	min-height: 100vh;
 `
 
-function App() {
-	return (
-		<StyledWrapper className="App">
-			<AppHeader />
-			<AppMain />
-		</StyledWrapper>
-	)
+class App extends Component {
+	handleFloatLayer = e => {
+		if (
+			!e.target.classList.contains("floatLayer") &&
+			!e.target.classList.contains("toggleFloatLayerButton")
+		) {
+			const floatLayers = document.querySelectorAll(".floatLayer")
+			for (let i = 0; i < floatLayers.length; i++) {
+				floatLayers[i].classList.remove("is-show")
+			}
+		}
+	}
+
+	componentDidMount() {
+		document.body.addEventListener("click", this.handleFloatLayer)
+	}
+	componentWillUnmount() {
+		document.body.removeEventListener("click", this.handleFloatLayer)
+	}
+
+	render() {
+		return (
+			<StyledWrapper className="App">
+				<AppHeader />
+				<AppMain />
+			</StyledWrapper>
+		)
+	}
 }
 
 export default App

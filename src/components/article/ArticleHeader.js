@@ -10,7 +10,6 @@ const StyledWrapper = styled.header`
 	.articleInfo {
 		flex: 1;
 		text-align: left;
-		margin-left: 15px;
 
 		.author {
 			font-weight: bold;

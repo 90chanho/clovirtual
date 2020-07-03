@@ -12,13 +12,20 @@ const StyledWrapper = styled.div`
 `
 
 export default class ArticlePopularity extends Component {
+	constructor(props) {
+		super(props)
+		this.props = props
+	}
 	render() {
+		const { articleData } = this.props
 		return (
 			<StyledWrapper>
 				<div>
 					<i className="fas fa-thumbs-up"></i> 좋아요 숫자
 				</div>
-				<div>댓글 몇 개</div>
+				<div hidden={!articleData.comments.length}>
+					댓글 {articleData.comments ? articleData.comments.length : 0} 개
+				</div>
 			</StyledWrapper>
 		)
 	}

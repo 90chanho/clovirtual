@@ -4,8 +4,9 @@
 		"paths": {
 			"assets": ["./assets/*"],
 			"components": ["./components/*"],
+			"lib": ["./lib/*"],
 			"store": ["./store/*"],
-			"data": ["./store/*"]
+			"data": ["./data/*"]
 		}
 	}
 }

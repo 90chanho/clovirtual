@@ -33,7 +33,20 @@ export const GlobalStyle = createGlobalStyle`
     background: none;
     border: none;
   }
+
   button, .clickable {
     cursor: pointer;
+  }
+
+  *[hidden] {
+    display: none !important;
+  }
+
+  .floatLayer {
+    display: none;
+    z-index: 10;
+    &.is-show {
+      display: block;
+    }
   }
 `

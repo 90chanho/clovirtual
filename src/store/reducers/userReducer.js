@@ -2,15 +2,16 @@ import { users } from "data/dummy.json"
 import { GET_USERS } from "../actions/userAction"
 
 let initValue = {
-	users: []
+	users: users
 }
-if (window.localStorage.getItem("nzc-cvf")) {
-	const localStorageData = window.localStorage.setItem("nzcUsers")
+
+if (window.localStorage.getItem("nzc-cvf-users")) {
+	const localStorageData = JSON.parse(window.localStorage.getItem("nzc-cvf-users"))
 	initValue = {
-		users: localStorageData.users
+		users: localStorageData
 	}
 } else {
-	initValue.users = users
+	window.localStorage.setItem("nzc-cvf-users", JSON.stringify(users))
 }
 
 const userReducer = (state = initValue, action) => {

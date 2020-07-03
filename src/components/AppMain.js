@@ -25,8 +25,8 @@ class AppMain extends Component {
 			<StyledWrapper>
 				<h2>페이스북 게시글의 댓글 기능 구현</h2>
 				<ul>
-					{articles.map((article, index) => {
-						return <Article key={`${article.aid}`} />
+					{articles.map(article => {
+						return <Article key={`${article.aid}`} articleData={article} />
 					})}
 				</ul>
 			</StyledWrapper>

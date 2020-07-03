@@ -18,15 +18,21 @@ const StyledWrapper = styled.article`
 `
 
 export default class Article extends Component {
+	constructor(props) {
+		super(props)
+		this.props = props
+	}
+
 	render() {
+		const { articleData } = this.props
 		return (
 			<StyledWrapper>
 				<ArticleHeader />
 				<ArticleContent />
 				<footer>
-					<ArticlePopularity />
+					<ArticlePopularity articleData={articleData} />
 					<ArticleReaction />
-					<ArticleComment />
+					<ArticleComment articleData={articleData} />
 				</footer>
 			</StyledWrapper>
 		)
