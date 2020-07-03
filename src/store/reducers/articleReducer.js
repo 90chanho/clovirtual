@@ -34,9 +34,7 @@ const articleReducer = (state = initValue, { type, payload }) => {
 			return state
 		case ADD_ARTICLE_COMMENT:
 			updatedArticles = state.articles.map(article => {
-				if (article.aid === payload.aid) {
-					article.comments.push(payload)
-				}
+				if (article.aid === payload.aid) article.comments.push(payload)
 				return article
 			})
 			changedState = {
@@ -47,12 +45,9 @@ const articleReducer = (state = initValue, { type, payload }) => {
 			return changedState
 		case REMOVE_ARTICLE_COMMENT:
 			updatedArticles = state.articles.map(article => {
-				if (article.aid === payload.aid) {
-					const targetIndex = article.comments.findIndex(comment => {
-						return comment.cid === payload.cid
-					})
-					article.comments.splice(targetIndex, 1)
-				}
+				if (article.aid !== payload.aid) return article
+				const targetIndex = article.comments.findIndex(comment => comment.cid === payload.cid)
+				article.comments.splice(targetIndex, 1)
 				return article
 			})
 			changedState = {
@@ -63,13 +58,10 @@ const articleReducer = (state = initValue, { type, payload }) => {
 			return changedState
 		case LIKE_ARTICLE_COMMENT:
 			updatedArticles = state.articles.map(article => {
-				if (article.aid === payload.aid) {
-					article.comments.forEach(comment => {
-						if (comment.cid === payload.cid) {
-							comment.likes.push(payload.authorUid)
-						}
-					})
-				}
+				if (article.aid !== payload.aid) return article
+				article.comments.forEach(
+					comment => comment.cid === payload.cid && comment.likes.push(payload.authorUid)
+				)
 				return article
 			})
 			changedState = {
@@ -80,16 +72,10 @@ const articleReducer = (state = initValue, { type, payload }) => {
 			return changedState
 		case CANCEL_LIKE_ARTICLE_COMMENT:
 			updatedArticles = state.articles.map(article => {
-				if (article.aid === payload.aid) {
-					article.comments.forEach(comment => {
-						if (comment.cid === payload.cid) {
-							const targetIndex = comment.likes.findIndex(liker => {
-								return liker === payload.authorUid
-							})
-							comment.likes.splice(targetIndex, 1)
-						}
-					})
-				}
+				if (article.aid !== payload.aid) return article
+				const targetComment = article.comments.filter(comment => comment.cid === payload.cid)
+				const targetIndex = targetComment[0].likes.findIndex(liker => liker === payload.authorUid)
+				targetComment[0].likes.splice(targetIndex, 1)
 				return article
 			})
 			changedState = {
@@ -100,13 +86,10 @@ const articleReducer = (state = initValue, { type, payload }) => {
 			return changedState
 		case ADD_RE_COMMENT:
 			updatedArticles = state.articles.map(article => {
-				if (article.aid === payload.aid) {
-					article.comments.forEach(comment => {
-						if (comment.cid === payload.cid) {
-							comment.comments.push(payload)
-						}
-					})
-				}
+				if (article.aid !== payload.aid) return article
+				article.comments.forEach(
+					comment => comment.cid === payload.cid && comment.comments.push(payload)
+				)
 				return article
 			})
 			changedState = {
@@ -117,17 +100,12 @@ const articleReducer = (state = initValue, { type, payload }) => {
 			return changedState
 		case LIKE_RE_COMMENT:
 			updatedArticles = state.articles.map(article => {
-				if (article.aid === payload.aid) {
-					article.comments.forEach(comment => {
-						if (comment.cid === payload.cid) {
-							comment.comments.forEach(recomment => {
-								if (recomment.ccid === payload.ccid) {
-									recomment.likes.push(payload.authorUid)
-								}
-							})
-						}
-					})
-				}
+				if (article.aid !== payload.aid) return article
+				const targetComment = article.comments.filter(comment => comment.cid === payload.cid)
+				const targetReComment = targetComment[0].comments.filter(
+					recomment => recomment.ccid === payload.ccid
+				)
+				targetReComment[0].likes.push(payload.authorUid)
 				return article
 			})
 			changedState = {
@@ -138,20 +116,15 @@ const articleReducer = (state = initValue, { type, payload }) => {
 			return changedState
 		case CANCEL_LIKE_RE_COMMENT:
 			updatedArticles = state.articles.map(article => {
-				if (article.aid === payload.aid) {
-					article.comments.forEach(comment => {
-						if (comment.cid === payload.cid) {
-							comment.comments.forEach(recomment => {
-								if (recomment.ccid === payload.ccid) {
-									const targetIndex = recomment.likes.findIndex(liker => {
-										return liker === payload.authorUid
-									})
-									recomment.likes.splice(targetIndex, 1)
-								}
-							})
-						}
-					})
-				}
+				if (article.aid !== payload.aid) return article
+				const targetComment = article.comments.filter(comment => comment.cid === payload.cid)
+				const targetReComment = targetComment[0].comments.filter(
+					recomment => recomment.ccid === payload.ccid
+				)
+				const targetIndex = targetReComment[0].likes.findIndex(liker => {
+					return liker === payload.authorUid
+				})
+				targetReComment[0].likes.splice(targetIndex, 1)
 				return article
 			})
 			changedState = {
